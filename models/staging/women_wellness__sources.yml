@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: women_wellness
+    schema: women_wellness  
+    tables:
+      - name: wellness
+      - name: wellness__age_related

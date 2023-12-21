@@ -1,0 +1,27 @@
+semantic_models:
+  #The name of the semantic model.
+  - name: surveys
+    defaults:
+        agg_time_dimension: surveyed_at
+    description: |
+      Surveys table. This table is at the survey grain with one row per survey. Survey ids are not unique. 
+    #The name of the dbt model and schema
+    model: ref('base')
+      #Entities. These usually correspond to keys in the table.
+    entities:
+      - name: id
+        type: primary
+        expr: id 
+    measures: 
+      - name: surveys_total
+        description: The total surveys for each survey id (type).
+        agg: count 
+        expr: 1
+    dimensions:
+      - name: surveyed_at
+        type: time
+        type_params:
+          time_granularity: day 
+      - name: surveys_total_dim
+        type: categorical
+        expr: order_total
