@@ -1,0 +1,7 @@
+metrics:
+  - name: survey_total
+    description: Sum of total surveys filled. 
+    type: simple
+    label: Surveys Counted Total
+    type_params:
+      measure: surveys_total
