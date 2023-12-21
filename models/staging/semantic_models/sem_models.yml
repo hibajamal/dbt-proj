@@ -24,4 +24,4 @@ semantic_models:
           time_granularity: day 
       - name: surveys_total_dim
         type: categorical
-        expr: order_total
+        expr: surveys_total
